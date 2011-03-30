@@ -1,8 +1,8 @@
 BASH Completion
 ===============
 
-Description
-  BASH script to list the completions bash would apply when a user hits `TAB` `TAB` on the command line. 
+Description:
+ BASH script to list the completions bash would apply when a user hits `TAB` `TAB` on the command line. 
 
 Usage
     ./bash-complete.sh "command to complete..."
@@ -14,8 +14,8 @@ Examples
     ./bash-complete.sh "ssh -"                # will list ssh command flags"
     ./bash-complete.sh "ssh -o "              # will list available ssh options"
 
-Author
-  [Mathias Leppich][http://github.com/muhqu] <mleppich@muhqu.de>
+Author:
+ [Mathias Leppich](http://github.com/muhqu) <mleppich@muhqu.de>
 
 ---------------
 
