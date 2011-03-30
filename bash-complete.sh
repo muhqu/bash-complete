@@ -1,12 +1,23 @@
 #!/bin/bash
 
-CMD="$1"
-BNDRY="XYZXYZXYZXYZXYZXYZXYZXYZXYZ"
+if [ "$#" != "1" ]; then
+	echo "Usage: $0 \"command to complete...\""
+	echo ""
+	echo "Examples:"
+	echo "  $0 \"ssh\"                  - will list commands like: ssh, ssh-add, ssh-keygen"
+	echo "  $0 \"ssh \"                 - will list known hosts"
+	echo "  $0 \"ssh -\"                - will list ssh command flags"
+	echo "  $0 \"ssh -o \"              - will list available ssh options"
+	echo ""
+	exit 1;
+fi
 
 #
 # simulate some user input and pipe that into an interactive bash
 # AWESOME!
 #
+CMD="$1"
+BNDRY="XYZXYZXYZXYZXYZXYZXYZXYZXYZ"
 OUTPUT=$(echo -ne "false && ($CMD\t\tyyyy) && echo $BNDRY" | COLUMNS=1024 PS1="$BNDRY " /bin/bash -i 2>&1)
 
 #
